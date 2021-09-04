@@ -42,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
                 mima mima4 = mimas.get(position);
                 Intent intent4 = new Intent(MainActivity.this,mimaxianshi.class);
                 intent4.putExtra("密码名称",mima4.get名称());
-                startActivity(intent4);
+                intent4.putExtra("position",position);
+                startActivityForResult(intent4,2);
             }
         });
         FloatingActionButton add_mima键 = (FloatingActionButton)findViewById(R.id.add_mima);
@@ -79,6 +80,14 @@ public class MainActivity extends AppCompatActivity {
                     }
                     adapter.notifyDataSetChanged();
                     break;
+                }
+            case 2:
+                if (resultCode==RESULT_OK){
+                    String 密码名称 = data.getStringExtra("名称");
+                    int position = data.getIntExtra("position",1);
+                    LitePal.deleteAll(mima.class,"名称=?",密码名称);
+                    mimas.remove(position);
+                    adapter.notifyDataSetChanged();
                 }
         }
     }

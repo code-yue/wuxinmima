@@ -4,7 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Enroll">
+    tools:context=".mimaxianshi">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/删除密码"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/delete"/>
+
     <LinearLayout
         android:id="@+id/输入"
         android:layout_width="wrap_content"
@@ -34,8 +44,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:id="@+id/显示绑定手机号"/>
-
-
     </LinearLayout>
 
 </RelativeLayout>
