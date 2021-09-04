@@ -65,6 +65,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     Toast.makeText(Login.this,"输入有误，请检查重新输入",Toast.LENGTH_SHORT).show();
                 }else{
                     Intent intent1 = new Intent(Login.this,MainActivity.class);
+                    intent1.putExtra("手机号",手机号信息);
                     startActivity(intent1);
                     finish();
                 }
