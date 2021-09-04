@@ -2,10 +2,12 @@ package com.example.wuxinmima;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class add_mima extends AppCompatActivity {
     private EditText 添加用户名;
@@ -25,6 +27,8 @@ public class add_mima extends AppCompatActivity {
         添加密码 = (EditText)findViewById(R.id.添加密码);
         密码名称 = (EditText)findViewById(R.id.密码名称);
         绑定手机号 = (EditText)findViewById(R.id.绑定手机号);
+        Intent intent = getIntent();
+        String 真正用户名 = intent.getStringExtra("用户名");
         添加.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,13 +38,21 @@ public class add_mima extends AppCompatActivity {
                 String 账号 = 添加账号.getText().toString();
                 String 密码 = 添加密码.getText().toString();
                 String 手机号 = 绑定手机号.getText().toString();
-                mima Mima = new mima();
-                Mima.set用户名(用户名);
-                Mima.set名称(名称);
-                Mima.set账号(账号);
-                Mima.set密码(密码);
-                Mima.set绑定手机号(手机号);
-                Mima.save();
+                if (用户名.equals(真正用户名)){
+                    mima Mima = new mima();
+                    Mima.set用户名(用户名);
+                    Mima.set名称(名称);
+                    Mima.set账号(账号);
+                    Mima.set密码(密码);
+                    Mima.set绑定手机号(手机号);
+                    Mima.save();
+                    Intent intent1 = new Intent();
+                    intent1.putExtra("密码名称",名称);
+                    setResult(RESULT_OK,intent1);
+                    finish();
+                }else{
+                    Toast.makeText(add_mima.this,"请输入正确的用户名",Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

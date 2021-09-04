@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Wuxinmima">
-        <activity android:name=".add_mima"></activity>
+        <activity android:name=".mimaxianshi"></activity>
+        <activity android:name=".add_mima" />
         <activity android:name=".Enroll" />
         <activity android:name=".Login">
             <intent-filter>

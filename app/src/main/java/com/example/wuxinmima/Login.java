@@ -1,5 +1,6 @@
 package com.example.wuxinmima;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -74,4 +75,5 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 break;
         }
     }
+
 }
