@@ -23,6 +23,7 @@ public class Enroll extends AppCompatActivity implements View.OnClickListener{
     private EditText 注册验证码;
     private EditText 注册确认密码;
     private Button 获取验证码;
+    private Button 取消注册;
 
 
     @Override
@@ -37,6 +38,8 @@ public class Enroll extends AppCompatActivity implements View.OnClickListener{
         注册登录 = (Button)findViewById(R.id.注册登录);
         注册确认密码 = (EditText)findViewById(R.id.密码确认);
         获取验证码 = (Button)findViewById(R.id.注册获取验证码);
+        取消注册 =(Button)findViewById(R.id.取消注册);
+        取消注册.setOnClickListener(this);
         注册登录.setOnClickListener(this);
         获取验证码.setOnClickListener(this);
     }
@@ -105,6 +108,8 @@ public class Enroll extends AppCompatActivity implements View.OnClickListener{
                 }
                 break;
             case R.id.注册获取验证码:
+            case R.id.取消注册:
+                finish();
             default:
                 break;
         }

@@ -25,6 +25,7 @@ public class mimaxianshi extends AppCompatActivity {
     private FloatingActionButton 删除密码;
     private Button 修改信息;
     private String 用户名;
+    private Button 修改信息取消;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class mimaxianshi extends AppCompatActivity {
         显示绑定手机号 = (TextView)findViewById(R.id.显示绑定手机号);
         删除密码 = (FloatingActionButton)findViewById(R.id.删除密码);
         修改信息 = (Button)findViewById(R.id.修改信息);
+        修改信息取消 = (Button)findViewById(R.id.修改信息取消);
         Intent intent = getIntent();
         String 名称 = intent.getStringExtra("密码名称");
         int position = intent.getIntExtra("position",1);
@@ -70,6 +72,12 @@ public class mimaxianshi extends AppCompatActivity {
                 intent5.putExtra("用户名",用户名);
                 intent5.putExtra("名称",名称);
                 startActivityForResult(intent5,1);
+            }
+        });
+        修改信息取消.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
