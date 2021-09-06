@@ -103,12 +103,15 @@ public class Enroll extends AppCompatActivity implements View.OnClickListener{
                     users.set手机号(手机号);
                     users.save();
                     Intent intent = new Intent(Enroll.this,MainActivity.class);
+                    intent.putExtra("手机号",手机号);
                     startActivity(intent);
                     finish();
                 }
                 break;
             case R.id.注册获取验证码:
             case R.id.取消注册:
+                Intent intent1 = new Intent(Enroll.this,Login.class);
+                startActivity(intent1);
                 finish();
             default:
                 break;

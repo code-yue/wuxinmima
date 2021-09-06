@@ -39,6 +39,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             case R.id.注册:
                 Intent intent = new Intent(Login.this,Enroll.class);
                 startActivity(intent);
+                finish();
                 break;
             case R.id.登录:
                 String 账号信息 = 账号.getText().toString();
